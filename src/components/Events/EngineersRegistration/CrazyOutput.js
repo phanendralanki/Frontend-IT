@@ -39,8 +39,26 @@ const CrazyOutput = () => {
         navigate("/events");
       },2000);
 
+    }else if(response.status === 400){
+      toast.error("Already Registered");
+      e.target.regno.value = "";
+      e.target.year.value = "";
+      e.target.branch.value = "";
+
+      setTimeout(() => {
+        navigate("/events");
+      }, 2000);
+
     }else{
-      alert("something went wrong");
+      toast.error('something went wrong');
+      e.target.regno.value = "";
+      e.target.year.value = "";
+      e.target.branch.value = "";
+
+      setTimeout(() => {
+        navigate("/events");
+      }, 2000);
+
     }
   }
 

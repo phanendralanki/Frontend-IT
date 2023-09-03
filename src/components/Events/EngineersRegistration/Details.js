@@ -4,21 +4,6 @@ import toast, { Toaster } from "react-hot-toast";
 import {AiFillDelete} from 'react-icons/ai';
 // import {MdOutlineEdit} from 'react-icons/md';
 const Details = () => {
-  
-  // for editing buttons
-  // const[editQuiz,setEditQuiz] = useState(false);
-  // const[editPoster,setEditPoster] = useState(false);
-  // const [editPPT, setEditPPT] = useState(false);
-  // const[editCrazy,setEditCrazy] = useState(false);
-  
-  // const[selectedPost,setSelectedPost] = useState("");
-
-  //for editing
-  // const[regno,setRegno] = useState("");
-  // const[branch,setBranch] = useState("");
-  // const[year,setYear] = useState("");
-
-
   /*
   =======================
    Technical Quiz Code
@@ -94,17 +79,17 @@ const Details = () => {
      setPosters(data.getPosters);
    };
 
-   const deletePoster = async(id)=>{
-    const response = await fetch(`http://localhost:5000/delete-poster/${id}`,{
-      method:"DELETE",
-    });
-    if(response.status===200){
-      toast.success("Deleted Successfully");
-    }else{
-      toast.error("something went wrong");
-    }
+  //  const deletePoster = async(id)=>{
+  //   const response = await fetch(`http://localhost:5000/delete-poster/${id}`,{
+  //     method:"DELETE",
+  //   });
+  //   if(response.status===200){
+  //     toast.success("Deleted Successfully");
+  //   }else{
+  //     toast.error("something went wrong");
+  //   }
 
-   }
+  //  }
   
   /*
     ===============================

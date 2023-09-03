@@ -37,6 +37,14 @@ const PPTRegistration = () => {
       setTimeout(() => {
         navigate("/events");
       }, 2000);
+    }else if(response.status===400){
+      toast.error("Already Registered");
+      e.target.regno.value = "";
+      e.target.year.value = "";
+      e.target.branch.value = "";
+      setTimeout(() => {
+        navigate("/pptRegistration");
+      }, 2000);
     }else{
       toast.error("something went wrong");
       e.target.regno.value = "";
@@ -46,11 +54,6 @@ const PPTRegistration = () => {
         navigate("/pptRegistration");
       }, 2000);
     }
-
-
-
-
-
   }
 
   return (

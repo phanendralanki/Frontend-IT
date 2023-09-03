@@ -33,16 +33,30 @@ const PosterPresentation = () => {
       // alert("Registered successfully");
        toast.success("Registered successfully");
       e.target.regno.value = "";
-      e.target.branch.value="";
       e.target.year.value="";
+      e.target.branch.value = "";
 
       setTimeout(() => {
         navigate("/events");
-      }, 2000);
-     
-      
+      }, 2000); 
+    }else if(response.status===400){
+      toast.error("Already Registered");
+      e.target.regno.value = "";
+      e.target.year.value = "";
+      e.target.branch.value = "";
+
+      setTimeout(()=>{
+        navigate("/events");
+      },2000);
     }else{
-      alert("Registration unsuccessfull");
+      toast.error("something went wrong");
+      e.target.regno.value = "";
+      e.target.year.value = "";
+      e.target.branch.value = "";
+
+      setTimeout(()=>{
+        navigate("/events");
+      },2000);
     }
 
    };

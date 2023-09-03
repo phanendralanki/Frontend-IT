@@ -40,8 +40,24 @@ const TechnicalQuiz = () => {
        setTimeout(() => {
          navigate("/events");
        }, 2000);
-     } else {
-       alert("something went wrong");
+     } else if(response.status === 400){
+        toast.error("Already Registered");
+        e.target.regno.value = "";
+        e.target.year.value = "";
+        e.target.branch.value = "";
+
+        setTimeout(() => {
+          navigate("/events");
+        }, 2000);
+     }else {
+       toast.error("Something Went Wrong");
+       e.target.regno.value = "";
+       e.target.year.value = "";
+       e.target.branch.value = "";
+
+       setTimeout(() => {
+         navigate("/events");
+       }, 2000);
      }
 
 
