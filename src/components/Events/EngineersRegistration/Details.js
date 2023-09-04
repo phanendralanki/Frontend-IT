@@ -71,7 +71,9 @@ const Details = () => {
    }, [posters]);
 
    const getPosters = async () => {
-     const response = await fetch("http://localhost:5000/get-poster");
+     const response = await fetch(
+       "https://itcsbs-b10k.onrender.com/get-poster"
+     );
      const data = await response.json();
      setPosters(data.getPoster);
    };
