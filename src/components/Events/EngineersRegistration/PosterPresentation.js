@@ -32,13 +32,16 @@ const PosterPresentation = () => {
     };
 
     // below code is to send the data to the backend server
-    const response = await fetch("http://localhost:5000/post-poster",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json"
-      },
-      body:JSON.stringify(presentations),
-    });
+    const response = await fetch(
+      "https://itcsbs-b10k.onrender.com/post-poster",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(presentations),
+      }
+    );
 
     if(response.status === 200){
       // alert("Registered successfully");

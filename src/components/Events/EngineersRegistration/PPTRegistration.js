@@ -31,12 +31,12 @@ const PPTRegistration = () => {
     };
 
     //below code is to send data to server
-    const response = await fetch("http://localhost:5000/post-ppt",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json"
+    const response = await fetch("https://itcsbs-b10k.onrender.com/post-ppt", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
       },
-      body:JSON.stringify(ppt),
+      body: JSON.stringify(ppt),
     });
 
     if(response.status === 200){

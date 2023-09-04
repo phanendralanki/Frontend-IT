@@ -34,12 +34,12 @@ const TechnicalQuiz = () => {
     };
 
     //below code is to send the data to the server
-    const response = await fetch("http://localhost:5000/post-quiz",{
-      method:"POST",
-      headers:{
-        "Content-type":"application/json"
+    const response = await fetch("https://itcsbs-b10k.onrender.com/post-quiz", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
       },
-      body:JSON.stringify(quiz),
+      body: JSON.stringify(quiz),
     });
 
      if (response.status === 200) {
