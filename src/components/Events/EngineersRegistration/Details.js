@@ -73,23 +73,20 @@ const Details = () => {
    const getPosters = async () => {
      const response = await fetch("http://localhost:5000/get-poster");
      const data = await response.json();
-
-     // console.log(data);
-     // console.log(data.getQuiz);
-     setPosters(data.getPosters);
+     setPosters(data.getPoster);
    };
 
-  //  const deletePoster = async(id)=>{
-  //   const response = await fetch(`http://localhost:5000/delete-poster/${id}`,{
-  //     method:"DELETE",
-  //   });
-  //   if(response.status===200){
-  //     toast.success("Deleted Successfully");
-  //   }else{
-  //     toast.error("something went wrong");
-  //   }
+   const deletePoster = async(id)=>{
+    const response = await fetch(`http://localhost:5000/delete-poster/${id}`,{
+      method:"DELETE",
+    });
+    if(response.status===200){
+      toast.success("Deleted Successfully");
+    }else{
+      toast.error("something went wrong");
+    }
 
-  //  }
+   }
   
   /*
     ===============================
@@ -218,7 +215,7 @@ const Details = () => {
 
       {/* table 2 */}
       {/* Poster Presentation */}
-      {/* <h1 className="text-center fw-bold text-danger">Poster Presentation</h1>
+      <h1 className="text-center fw-bold text-danger">Poster Presentation</h1>
       <div className="mt-2 d-flex vh-50  justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
@@ -232,17 +229,17 @@ const Details = () => {
                 </tr>
               </thead>
               <tbody>
-                {posters && posters.map((post) => {
+                {posters && posters.map((poster) => {
                   return (
-                    <tr key={post._id}>
-                      <td>{post.regno}</td>
-                      <td>{post.branch}</td>
-                      <td>{post.year}</td>
+                    <tr key={poster._id}>
+                      <td>{poster.regno}</td>
+                      <td>{poster.branch}</td>
+                      <td>{poster.year}</td>
                       <td> 
                         <AiFillDelete
                           className="text-secondary"
                           style={{ cursor: "pointer" }}
-                          onClick={() => deletePoster(post._id)}
+                          onClick={() => deletePoster(poster._id)}
                         />
                       
                       </td>
@@ -253,7 +250,7 @@ const Details = () => {
             </table>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Poster Presentation END */}
 

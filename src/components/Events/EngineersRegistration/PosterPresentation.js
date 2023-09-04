@@ -12,7 +12,7 @@ const PosterPresentation = () => {
      const year = e.target.year.value;
      const branch = e.target.branch.value;
 
-    //  console.log(regno+" "+year+" "+branch);
+     console.log(regno+" "+year+" "+branch);
 
     const presentations = {
       regno:regno,
@@ -23,7 +23,7 @@ const PosterPresentation = () => {
     // below code is to send the data to the backend server
     const response = await fetch("http://localhost:5000/post-poster",{
       method:"POST",
-      header:{
+      headers:{
         "Content-type":"application/json"
       },
       body:JSON.stringify(presentations),
@@ -44,19 +44,11 @@ const PosterPresentation = () => {
       e.target.regno.value = "";
       e.target.year.value = "";
       e.target.branch.value = "";
-
-      setTimeout(()=>{
-        navigate("/events");
-      },2000);
     }else{
       toast.error("something went wrong");
       e.target.regno.value = "";
       e.target.year.value = "";
       e.target.branch.value = "";
-
-      setTimeout(()=>{
-        navigate("/events");
-      },2000);
     }
 
    };

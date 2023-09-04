@@ -45,10 +45,6 @@ const TechnicalQuiz = () => {
         e.target.regno.value = "";
         e.target.year.value = "";
         e.target.branch.value = "";
-
-        setTimeout(() => {
-          navigate("/events");
-        }, 2000);
      }else {
        toast.error("Something Went Wrong");
        e.target.regno.value = "";
