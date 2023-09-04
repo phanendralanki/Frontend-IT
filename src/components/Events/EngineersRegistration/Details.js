@@ -16,7 +16,7 @@ const Details = () => {
   }, [quizs]);
 
   const getQuiz = async () => {
-    const response = await fetch("http://localhost:5000/get-quiz");
+    const response = await fetch("https://itcsbs-b10k.onrender.com/get-quiz");
     const data = await response.json();
 
     // console.log(data);
@@ -25,9 +25,12 @@ const Details = () => {
   };
 
   const deleteQuiz = async(id) =>{
-      const response = await fetch(`http://localhost:5000/delete-quiz/${id}`,{
-        method:"DELETE",
-      });
+      const response = await fetch(
+        `https://itcsbs-b10k.onrender.com/delete-quiz/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if(response.status === 200){
           toast.success('deleted Successfully');
       }else{
@@ -79,9 +82,12 @@ const Details = () => {
    };
 
    const deletePoster = async(id)=>{
-    const response = await fetch(`http://localhost:5000/delete-poster/${id}`,{
-      method:"DELETE",
-    });
+    const response = await fetch(
+      `https://itcsbs-b10k.onrender.com/delete-poster/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     if(response.status===200){
       toast.success("Deleted Successfully");
     }else{
@@ -109,7 +115,7 @@ const Details = () => {
   }, [ppts]);
 
   const getppt = async () => {
-    const response = await fetch("http://localhost:5000/get-ppt");
+    const response = await fetch("https://itcsbs-b10k.onrender.com/get-ppt");
     const data = await response.json();
 
     // console.log(data);
@@ -118,9 +124,12 @@ const Details = () => {
   };
 
   const deletePPT = async(id)=>{
-    const response = await fetch(`http://localhost:5000/delete-ppt/${id}`,{
-      method:"DELETE",
-    });
+    const response = await fetch(
+      `https://itcsbs-b10k.onrender.com/delete-ppt/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     if(response.status === 200){
       toast.success("Delete successfully");
@@ -147,7 +156,7 @@ const Details = () => {
   }, [crazies]);
 
   const getCrazy = async () => {
-    const response = await fetch("http://localhost:5000/get-crazy");
+    const response = await fetch("https://itcsbs-b10k.onrender.com/get-crazy");
     const data = await response.json();
 
     // console.log(data);
@@ -156,9 +165,12 @@ const Details = () => {
   };
 
   const deleteCrazy = async(id)=>{
-    const response = await fetch(`http://localhost:5000/delete-crazy/${id}`,{
-      method:"DELETE",
-    });
+    const response = await fetch(
+      `https://itcsbs-b10k.onrender.com/delete-crazy/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     if(response.status===200){
       toast.success("Deleted Successfully");
     }else{
