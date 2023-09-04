@@ -42,6 +42,7 @@ const TechnicalQuiz = () => {
       body: JSON.stringify(quiz),
     });
 
+    console.log(response);
      if (response.status === 200) {
        // alert("registered successfully");
        toast.success("Registered successfully");
