@@ -1,10 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from "react-hot-toast";
 
 const PPTRegistration = () => {
 
   const navigate = useNavigate();
+  const [regno, setRegno] = useState("");
+
+  const handleRegnoChange = (e) => {
+    setRegno(e.target.value);
+  };
 
   const postPPT = async(e) => {
     e.preventDefault();
@@ -12,6 +17,12 @@ const PPTRegistration = () => {
     const year = e.target.year.value;
     const branch = e.target.branch.value;
 
+    const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
+
+    if (!regnoPattern.test(regno)) {
+      toast.error("Invalid registration number format");
+      return;
+    }
     // console.log(regno+" "+year+" "+branch);
     const ppt = {
       regno:regno,
@@ -76,6 +87,8 @@ const PPTRegistration = () => {
                   className="form-control"
                   name="regno"
                   id="exampleInputEmail1"
+                  value={regno}
+                  onChange={handleRegnoChange}
                   required
                 />
               </div>

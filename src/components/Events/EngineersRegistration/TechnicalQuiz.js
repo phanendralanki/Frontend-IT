@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import toast,{Toaster } from "react-hot-toast";
 
 const TechnicalQuiz = () => {
 
   const navigate = useNavigate();
+  const [regno, setRegno] = useState("");
+
+   const handleRegnoChange = (e) => {
+     setRegno(e.target.value);
+   };
+
 
   const postQuiz = async(e)=>{
     e.preventDefault();
@@ -12,6 +18,12 @@ const TechnicalQuiz = () => {
     const branch = e.target.branch.value;
     const year = e.target.year.value;
 
+    const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
+
+    if (!regnoPattern.test(regno)) {
+      toast.error("Invalid registration number format");
+      return;
+    }
     // console.log(regno+" "+branch+" "+year);
 
     //to store the data in a variable
@@ -67,7 +79,9 @@ const TechnicalQuiz = () => {
       <div className="container mt-5">
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-6">
-            <h1 className="fw-bold text-center text-success mb-4">TechnicalQuiz Registration</h1>
+            <h1 className="fw-bold text-center text-success mb-4">
+              TechnicalQuiz Registration
+            </h1>
             <form action="" onSubmit={postQuiz}>
               <div className="mb-3">
                 <label
@@ -80,7 +94,9 @@ const TechnicalQuiz = () => {
                   type="text"
                   className="form-control"
                   name="regno"
-                  id="exampleInputEmail1"
+                  id="exampleInput"
+                  value={regno}
+                  onChange={handleRegnoChange}
                   required
                 />
               </div>
@@ -118,8 +134,6 @@ const TechnicalQuiz = () => {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 };

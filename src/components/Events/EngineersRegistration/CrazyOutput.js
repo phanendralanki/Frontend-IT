@@ -1,15 +1,31 @@
-import React from 'react'
+import React from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router-dom"
 import toast, { Toaster } from "react-hot-toast";
 const CrazyOutput = () => {
 
-  const navigate = useNavigate();
+   const navigate = useNavigate();
+  const [regno, setRegno] = useState("");
+
+
+ 
+   const handleRegnoChange = (e) => {
+    setRegno(e.target.value);
+  };
+
 
   const postCrazy = async(e) =>{
     e.preventDefault();
+    const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
+
     const regno = e.target.regno.value;
     const year = e.target.year.value;
     const branch = e.target.branch.value;
+    if (!regnoPattern.test(regno)) {
+      toast.error("Invalid registration number format");
+      return;
+    }
+    
 
     // console.log(regno+" "+year+" "+branch);
     //to store the data in a variable
@@ -75,6 +91,8 @@ const CrazyOutput = () => {
                   className="form-control"
                   name="regno"
                   id="exampleInputEmail1"
+                  value={regno}
+                  onChange={handleRegnoChange}
                   required
                 />
               </div>

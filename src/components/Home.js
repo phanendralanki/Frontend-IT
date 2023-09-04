@@ -11,7 +11,7 @@ function Home() {
             order-lg-0 order-1 col-12 col-md-12 col-lg-6 d-flex
             flex-column justify-content-center  align-lg-start"
             >
-              <h1 className="text-capitalize fw-bolder">Department of IT-CS</h1>
+              <h1 className="text-capitalize fw-bolder">Department of IT-CSE</h1>
               <span className="waviy">
                 {/* CyberSecurity &amp; BusinessSystem */}
                 <span style={{ "--i": "1" }}>&#40;</span>
