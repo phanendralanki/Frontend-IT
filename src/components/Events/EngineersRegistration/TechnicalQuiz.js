@@ -6,38 +6,52 @@ const TechnicalQuiz = () => {
 
   const navigate = useNavigate();
   const [regno, setRegno] = useState("");
+  const [mobile,setMobile] = useState("");
 
    const handleRegnoChange = (e) => {
      setRegno(e.target.value);
    };
+
+   const handleMobile = (e) => {
+    setMobile(e.target.value);
+   }
+   
 
    
 
   const postQuiz = async(e)=>{
     e.preventDefault();
     const regno = e.target.regno.value;
-    
+    const mobile = e.target.mobile.value;
     const branch = e.target.branch.value;
     const year = e.target.year.value;
 
     const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
-    
+    const mobilePattern = /^[0-9]{10}$/;
 
     if (!regnoPattern.test(regno)) {
       toast.error("Invalid registration number");
       return;
     }
+    if(!mobilePattern.test(mobile)){
+      toast.error("Invalid Mobile number");
+      return;
+    }
+
+
 
     // console.log(regno+" "+branch+" "+year+" ");
 
     //to store the data in a variable
     const quiz = {
       regno:regno,
+      mobile:mobile,
       branch:branch,
       year:year,
     };
 
     //below code is to send the data to the server
+    // const response = await fetch("http://localhost:5000/post-quiz",{
     const response = await fetch("https://itcsbs-b10k.onrender.com/post-quiz", {
       method: "POST",
       headers: {
@@ -51,7 +65,7 @@ const TechnicalQuiz = () => {
        // alert("registered successfully");
        toast.success("Registered successfully");
        e.target.regno.value = "";
-       
+       e.target.mobile.value = "";
        e.target.year.value = "";
        e.target.branch.value = "";
 
@@ -59,15 +73,11 @@ const TechnicalQuiz = () => {
          navigate("/events");
        }, 2000);
      } else if(response.status === 400){
-        toast.error("Already Registered");
-        e.target.regno.value = "";
-       
-        e.target.year.value = "";
-        e.target.branch.value = "";
+        toast.error("Already Registered with this registration number");
      }else {
        toast.error("Something Went Wrong");
        e.target.regno.value = "";
-      
+       e.target.mobile.value = "";
        e.target.year.value = "";
        e.target.branch.value = "";
 
@@ -108,7 +118,25 @@ const TechnicalQuiz = () => {
                   required
                 />
               </div>
-              
+
+              <div className="mb-3">
+                <label
+                  htmlFor="exampleInputEmail1"
+                  className="form-label fw-bold"
+                >
+                  Mobile number
+                </label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="mobile"
+                  id="exampleInput" 
+                  value={mobile}
+                  onChange={handleMobile}
+                  required
+                />
+              </div>
+
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year
