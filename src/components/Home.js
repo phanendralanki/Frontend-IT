@@ -82,18 +82,18 @@ function Home() {
               <span style={{ "--i": "8" }}>S</span>
             </p>
             <div className='d-flex justify-content-center'>
-              <a href="/contact">
+              <a href="/events">
                 <OverlayTrigger
                   delay={{ hide: 450, show: 300 }}
-                  overlay={(props) => <Tooltip {...props}>contact now</Tooltip>}
+                  overlay={(props) => <Tooltip {...props}>Events</Tooltip>}
                   placement="top"
                 >
                   <button
-                    className="contact-button text-capitalize"
+                    className="contact-button text-capitalize fw-bold"
                     data-bs-toggle="tooltip"
                     data-bs-title="Know More"
                   >
-                    Contact now
+                    Events
                   </button>
                 </OverlayTrigger>
               </a>
