@@ -11,20 +11,24 @@ const TechnicalQuiz = () => {
      setRegno(e.target.value);
    };
 
+   
 
   const postQuiz = async(e)=>{
     e.preventDefault();
     const regno = e.target.regno.value;
+    
     const branch = e.target.branch.value;
     const year = e.target.year.value;
 
     const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
+    
 
     if (!regnoPattern.test(regno)) {
-      toast.error("Invalid registration number format");
+      toast.error("Invalid registration number");
       return;
     }
-    // console.log(regno+" "+branch+" "+year);
+
+    // console.log(regno+" "+branch+" "+year+" ");
 
     //to store the data in a variable
     const quiz = {
@@ -47,6 +51,7 @@ const TechnicalQuiz = () => {
        // alert("registered successfully");
        toast.success("Registered successfully");
        e.target.regno.value = "";
+       
        e.target.year.value = "";
        e.target.branch.value = "";
 
@@ -56,11 +61,13 @@ const TechnicalQuiz = () => {
      } else if(response.status === 400){
         toast.error("Already Registered");
         e.target.regno.value = "";
+       
         e.target.year.value = "";
         e.target.branch.value = "";
      }else {
        toast.error("Something Went Wrong");
        e.target.regno.value = "";
+      
        e.target.year.value = "";
        e.target.branch.value = "";
 
@@ -101,6 +108,7 @@ const TechnicalQuiz = () => {
                   required
                 />
               </div>
+              
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year

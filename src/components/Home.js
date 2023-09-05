@@ -68,7 +68,7 @@ function Home() {
 
       <main>
         <div className="hero-container">
-          <img src="./images/ITLogo.jpg" alt="" className='img-fluid'/>
+          <img src="./images/ITLogo.jpg" alt="" className="img-fluid" />
           <div className="hero-text">
             <h1>Department Of Information & Technology</h1>
             <p className="waviy">
@@ -81,7 +81,7 @@ function Home() {
               <span style={{ "--i": "7" }}>B</span>
               <span style={{ "--i": "8" }}>S</span>
             </p>
-            <div className='d-flex justify-content-center'>
+            <div className="d-flex justify-content-center mb-3">
               <a href="/events">
                 <OverlayTrigger
                   delay={{ hide: 450, show: 300 }}
@@ -89,9 +89,10 @@ function Home() {
                   placement="top"
                 >
                   <button
-                    className="contact-button text-capitalize fw-bold"
+                    className="primary-button contact-button btn text-capitalize fw-bold btn-lg mb-auto"
                     data-bs-toggle="tooltip"
                     data-bs-title="Know More"
+                    style={{"marginBlock":"auto","fontSize":"15px","marginBottm":"10px"}}
                   >
                     Events
                   </button>

@@ -6,22 +6,32 @@ const PosterPresentation = () => {
 
   const navigate = useNavigate();
   const [regno, setRegno] = useState("");
+
+
   const handleRegnoChange = (e) => {
     setRegno(e.target.value);
   };
+
+ 
 
 
    const postData = async(e) => {
      e.preventDefault();
      const regno = e.target.regno.value;
+     
      const year = e.target.year.value;
      const branch = e.target.branch.value;
+    
+
      const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
 
      if (!regnoPattern.test(regno)) {
-       toast.error("Invalid registration number format");
+       toast.error("Invalid registration number");
        return;
      }
+
+    //  const mobPattern = /^\d{10}$/;
+    
 
     //  console.log(regno+" "+year+" "+branch);
 
@@ -96,6 +106,7 @@ const PosterPresentation = () => {
                   required
                 />
               </div>
+              
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year

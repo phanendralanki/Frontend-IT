@@ -18,9 +18,6 @@ const Details = () => {
   const getQuiz = async () => {
     const response = await fetch("https://itcsbs-b10k.onrender.com/get-quiz");
     const data = await response.json();
-
-    // console.log(data);
-    // console.log(data.getQuiz);
     setQuiz(data.getQuiz);
   };
 
@@ -198,6 +195,7 @@ const Details = () => {
               <thead>
                 <tr>
                   <th>Reg no</th>
+                 
                   <th>Branch</th>
                   <th>Year</th>
                   <th>Action</th>
@@ -209,6 +207,7 @@ const Details = () => {
                     return (
                       <tr key={quiz._id}>
                         <td>{quiz.regno}</td>
+                        
                         <td>{quiz.branch}</td>
                         <td>{quiz.year}</td>
                         <td>

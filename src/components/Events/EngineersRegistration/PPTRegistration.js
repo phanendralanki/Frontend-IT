@@ -6,10 +6,14 @@ const PPTRegistration = () => {
 
   const navigate = useNavigate();
   const [regno, setRegno] = useState("");
+  
 
-  const handleRegnoChange = (e) => {
+  const handleChange = (e) => {
     setRegno(e.target.value);
   };
+
+
+  
 
   const postPPT = async(e) => {
     e.preventDefault();
@@ -18,11 +22,13 @@ const PPTRegistration = () => {
     const branch = e.target.branch.value;
 
     const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
-
+    
     if (!regnoPattern.test(regno)) {
-      toast.error("Invalid registration number format");
+      toast.error("Invalid registration number");
       return;
     }
+    
+
     // console.log(regno+" "+year+" "+branch);
     const ppt = {
       regno:regno,
@@ -60,6 +66,7 @@ const PPTRegistration = () => {
       e.target.year.value = "";
       e.target.branch.value = "";
       
+      
     }
   }
 
@@ -88,11 +95,12 @@ const PPTRegistration = () => {
                   name="regno"
                   id="exampleInputEmail1"
                   value={regno}
-                  onChange={handleRegnoChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
 
+              
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year

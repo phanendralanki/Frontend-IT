@@ -6,9 +6,8 @@ const CrazyOutput = () => {
 
    const navigate = useNavigate();
   const [regno, setRegno] = useState("");
+  
 
-
- 
    const handleRegnoChange = (e) => {
     setRegno(e.target.value);
   };
@@ -21,12 +20,14 @@ const CrazyOutput = () => {
     const regno = e.target.regno.value;
     const year = e.target.year.value;
     const branch = e.target.branch.value;
+
+
     if (!regnoPattern.test(regno)) {
-      toast.error("Invalid registration number format");
+      toast.error("Invalid registration number");
       return;
     }
-    
 
+    
     // console.log(regno+" "+year+" "+branch);
     //to store the data in a variable
     const crazy = {
@@ -99,6 +100,7 @@ const CrazyOutput = () => {
                   required
                 />
               </div>
+              
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year
