@@ -194,7 +194,7 @@ const Details = () => {
       <div className="d-flex vh-50  justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
-            <table className="table">
+            <table className="table table-hover table-bordered table-sm">
               <thead>
                 <tr>
                   <th>Reg no</th>
@@ -243,23 +243,23 @@ const Details = () => {
                 </tr>
               </thead>
               <tbody>
-                {posters && posters.map((poster) => {
-                  return (
-                    <tr key={poster._id}>
-                      <td>{poster.regno}</td>
-                      <td>{poster.branch}</td>
-                      <td>{poster.year}</td>
-                      <td> 
-                        <AiFillDelete
-                          className="text-secondary"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => deletePoster(poster._id)}
-                        />
-                      
-                      </td>
-                    </tr>
-                  );
-                })}
+                {posters &&
+                  posters.map((poster) => {
+                    return (
+                      <tr key={poster._id}>
+                        <td>{poster.regno}</td>
+                        <td>{poster.branch}</td>
+                        <td>{poster.year}</td>
+                        <td>
+                          <AiFillDelete
+                            className="text-secondary"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => deletePoster(poster._id)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>
@@ -274,7 +274,7 @@ const Details = () => {
       <div className="mt-2 d-flex vh-50  justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
-            <table className="table">
+            <table className="table table-hover table-bordered table-sm">
               <thead>
                 <tr>
                   <th>Reg no</th>
@@ -284,22 +284,23 @@ const Details = () => {
                 </tr>
               </thead>
               <tbody>
-                {ppts && ppts.map((ppt) => {
-                  return (
-                    <tr key={ppt._id}>
-                      <td>{ppt.regno}</td>
-                      <td>{ppt.branch}</td>
-                      <td>{ppt.year}</td>
-                      <td>
-                        <AiFillDelete
-                          className="text-secondary"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => deletePPT(ppt._id)}
-                        />
-                      </td>
-                    </tr>
-                  );
-                })}
+                {ppts &&
+                  ppts.map((ppt) => {
+                    return (
+                      <tr key={ppt._id}>
+                        <td>{ppt.regno}</td>
+                        <td>{ppt.branch}</td>
+                        <td>{ppt.year}</td>
+                        <td>
+                          <AiFillDelete
+                            className="text-secondary"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => deletePPT(ppt._id)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>
@@ -313,7 +314,7 @@ const Details = () => {
       <div className="mt-2 d-flex vh-50 justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
-            <table className="table">
+            <table className="table table-hover table-bordered table-sm">
               <thead>
                 <tr>
                   <th>Reg no</th>
@@ -323,22 +324,23 @@ const Details = () => {
                 </tr>
               </thead>
               <tbody>
-                {crazies && crazies.map((crazy) => {
-                  return (
-                    <tr key={crazy._id}>
-                      <td>{crazy.regno}</td>
-                      <td>{crazy.branch}</td>
-                      <td>{crazy.year}</td>
-                      <td>
-                        <AiFillDelete
-                          className="text-secondary"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => deleteCrazy(crazy._id)}
-                        />
-                      </td>
-                    </tr>
-                  );
-                })}
+                {crazies &&
+                  crazies.map((crazy) => {
+                    return (
+                      <tr key={crazy._id}>
+                        <td>{crazy.regno}</td>
+                        <td>{crazy.branch}</td>
+                        <td>{crazy.year}</td>
+                        <td>
+                          <AiFillDelete
+                            className="text-secondary"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => deleteCrazy(crazy._id)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>

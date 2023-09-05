@@ -4,7 +4,7 @@ const EngineersDay = () => {
   return (
     <>
       <div className="event-title">
-        <h1 className="event-title-heading cssFont mt-10 fs-7">Engineer's Day Events</h1>
+        <h1 className="event-title-heading text-center cssFont mt-10 fs-7">Engineer's Day Events</h1>
       </div>
 
       {/*Start - event timelines */}
@@ -55,7 +55,7 @@ const EngineersDay = () => {
       {/* Start - event cards*/}
 
       <div className="event-registration-title">
-        <h1>Event's Registrations</h1>
+        <h1 className='text-center'>Event's Registrations</h1>
       </div>
 
       {/* Technical Quiz card */}

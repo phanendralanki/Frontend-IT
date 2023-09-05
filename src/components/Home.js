@@ -68,7 +68,7 @@ function Home() {
 
       <main>
         <div className="hero-container">
-          <img src="./images/ITLogo.jpg" alt="" />
+          <img src="./images/ITLogo.jpg" alt="" className='img-fluid'/>
           <div className="hero-text">
             <h1>Department Of Information & Technology</h1>
             <p className="waviy">
