@@ -3,7 +3,7 @@ import { OverlayTrigger,Tooltip} from 'react-bootstrap';
 function Home() {
   return (
     <>
-      <section className="bg-main hero-section">
+      {/* <section className="bg-main hero-section">
         <div className="container">
           <div className="row mb-5">
             <div
@@ -13,7 +13,7 @@ function Home() {
             >
               <h1 className="text-capitalize fw-bolder">Department of IT-CSE</h1>
               <span className="waviy">
-                {/* CyberSecurity &amp; BusinessSystem */}
+                
                 <span style={{ "--i": "1" }}>&#40;</span>
                 <span style={{ "--i": "2" }}>C</span>
                 <span style={{ "--i": "3" }}>S</span>
@@ -51,7 +51,7 @@ function Home() {
               </div>
             </div>
 
-            {/* banner */}
+        
             <div className="col-12 col-md-12 col-lg-6 mx-auto">
               <div className="text-center text-md-end mb-5">
                 <img
@@ -64,7 +64,43 @@ function Home() {
 
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <main>
+        <div className="hero-container">
+          <img src="./images/ITLogo.jpg" alt="" />
+          <div className="hero-text">
+            <h1>Department Of Information & Technology</h1>
+            <p className="waviy">
+              <span style={{ "--i": "1" }}>I</span>
+              <span style={{ "--i": "2" }}>T</span>
+              <span style={{ "--i": "3" }}>-</span>
+              <span style={{ "--i": "4" }}>C</span>
+              <span style={{ "--i": "5" }}>S</span>
+              <span style={{ "--i": "6" }}>-</span>
+              <span style={{ "--i": "7" }}>B</span>
+              <span style={{ "--i": "8" }}>S</span>
+            </p>
+            <div className='d-flex justify-content-center'>
+              <a href="/contact">
+                <OverlayTrigger
+                  delay={{ hide: 450, show: 300 }}
+                  overlay={(props) => <Tooltip {...props}>contact now</Tooltip>}
+                  placement="top"
+                >
+                  <button
+                    className="contact-button text-capitalize"
+                    data-bs-toggle="tooltip"
+                    data-bs-title="Know More"
+                  >
+                    Contact now
+                  </button>
+                </OverlayTrigger>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
     </>
   );
 }
