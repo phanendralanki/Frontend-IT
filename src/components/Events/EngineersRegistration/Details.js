@@ -17,8 +17,8 @@ const Details = () => {
   }, [quizs]);
 
   const getQuiz = async () => {
-    // const response = await fetch("https://itcsbs-b10k.onrender.com/get-quiz");
-    const response = await fetch("http://localhost:5000/get-quiz");
+    const response = await fetch("https://itcsbs-b10k.onrender.com/get-quiz");
+    // const response = await fetch("http://localhost:5000/get-quiz");
     const data = await response.json();
     setQuiz(data.getQuiz);
   };
@@ -75,6 +75,7 @@ const Details = () => {
    const getPosters = async () => {
      const response = await fetch(
        "https://itcsbs-b10k.onrender.com/get-poster"
+      // "http://localhost:5000/get-poster"
      );
      const data = await response.json();
      setPosters(data.getPoster);
@@ -115,6 +116,7 @@ const Details = () => {
 
   const getppt = async () => {
     const response = await fetch("https://itcsbs-b10k.onrender.com/get-ppt");
+    // const response = await fetch("http://localhost:5000/get-ppt");
     const data = await response.json();
 
     // console.log(data);
@@ -156,6 +158,7 @@ const Details = () => {
 
   const getCrazy = async () => {
     const response = await fetch("https://itcsbs-b10k.onrender.com/get-crazy");
+    // const response = await fetch("http://localhost:5000/get-crazy");
     const data = await response.json();
 
     // console.log(data);
@@ -279,6 +282,7 @@ const Details = () => {
               <thead>
                 <tr>
                   <th>Reg no</th>
+                  <th>Mobile</th>
                   <th>Branch</th>
                   <th>Year</th>
                   <th>Action</th>
@@ -290,6 +294,7 @@ const Details = () => {
                     return (
                       <tr key={poster._id}>
                         <td>{poster.regno}</td>
+                        <td>{poster.mobile}</td>
                         <td>{poster.branch}</td>
                         <td>{poster.year}</td>
                         <td>
@@ -320,6 +325,7 @@ const Details = () => {
               <thead>
                 <tr>
                   <th>Reg no</th>
+                  <th>Mobile</th>
                   <th>Branch</th>
                   <th>Year</th>
                   <th>Action</th>
@@ -331,6 +337,7 @@ const Details = () => {
                     return (
                       <tr key={ppt._id}>
                         <td>{ppt.regno}</td>
+                        <td>{ppt.mobile}</td>
                         <td>{ppt.branch}</td>
                         <td>{ppt.year}</td>
                         <td>
@@ -360,6 +367,7 @@ const Details = () => {
               <thead>
                 <tr>
                   <th>Reg no</th>
+                  <th>Mobile</th>
                   <th>Branch</th>
                   <th>Year</th>
                   <th>Action</th>
@@ -371,6 +379,7 @@ const Details = () => {
                     return (
                       <tr key={crazy._id}>
                         <td>{crazy.regno}</td>
+                        <td>{crazy.mobile}</td>
                         <td>{crazy.branch}</td>
                         <td>{crazy.year}</td>
                         <td>

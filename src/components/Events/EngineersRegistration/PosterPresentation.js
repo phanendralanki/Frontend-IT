@@ -6,37 +6,44 @@ const PosterPresentation = () => {
 
   const navigate = useNavigate();
   const [regno, setRegno] = useState("");
-
+  const[mobile,setMobile] = useState("");
 
   const handleRegnoChange = (e) => {
     setRegno(e.target.value);
   };
 
- 
+  const handleMobile = (e) =>{
+    setMobile(e.target.value);
+  };
 
 
    const postData = async(e) => {
      e.preventDefault();
      const regno = e.target.regno.value;
-     
+     const mobile = e.target.mobile.value;
      const year = e.target.year.value;
      const branch = e.target.branch.value;
     
 
      const regnoPattern = /^[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{4}$/;
+     const mobilePattern = /^[0-9]{10}$/;
 
      if (!regnoPattern.test(regno)) {
        toast.error("Invalid registration number");
        return;
      }
 
-    //  const mobPattern = /^\d{10}$/;
-    
+     if(!mobilePattern.test(mobile)){
+      toast.error("Invalid mobile number");
+      return;
+     }
+
 
     //  console.log(regno+" "+year+" "+branch);
 
     const presentations = {
       regno:regno,
+      mobile:mobile,
       year:year,
       branch:branch,
     };
@@ -44,6 +51,7 @@ const PosterPresentation = () => {
     // below code is to send the data to the backend server
     const response = await fetch(
       "https://itcsbs-b10k.onrender.com/post-poster",
+      // "http://localhost:5000/post-poster",
       {
         method: "POST",
         headers: {
@@ -57,6 +65,7 @@ const PosterPresentation = () => {
       // alert("Registered successfully");
        toast.success("Registered successfully");
       e.target.regno.value = "";
+      e.target.mobile.value = "";
       e.target.year.value="";
       e.target.branch.value = "";
 
@@ -64,15 +73,9 @@ const PosterPresentation = () => {
         navigate("/events");
       }, 2000); 
     }else if(response.status===400){
-      toast.error("Already Registered");
-      e.target.regno.value = "";
-      e.target.year.value = "";
-      e.target.branch.value = "";
+      toast.error("Already Registered with this registration number");
     }else{
       toast.error("something went wrong");
-      e.target.regno.value = "";
-      e.target.year.value = "";
-      e.target.branch.value = "";
     }
 
    };
@@ -106,7 +109,25 @@ const PosterPresentation = () => {
                   required
                 />
               </div>
-              
+
+              <div className="mb-3">
+                <label
+                  htmlFor="exampleInputEmail1"
+                  className="form-label fw-bold"
+                >
+                  Mobile number
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="mobile"
+                  id="exampleInputEmail1"
+                  value={mobile}
+                  onChange={handleMobile}
+                  required
+                />
+              </div>
+
               <div className="mb-3">
                 <label htmlFor="year" className="form-label fw-bold">
                   Select year
