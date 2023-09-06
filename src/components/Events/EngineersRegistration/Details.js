@@ -2,6 +2,7 @@ import React from 'react'
 import {useState,useEffect} from "react";
 import toast, { Toaster } from "react-hot-toast";
 import {AiFillDelete} from 'react-icons/ai';
+import './details.css';
 // import {MdOutlineEdit} from 'react-icons/md';
 const Details = () => {
   /*
@@ -188,8 +189,8 @@ const Details = () => {
       <Toaster position="top-center" reverseOrder={false} />
       {/* toaster */}
 
-      <h1 className="mt-5 text-center fw-bold text-primary">Technical Quiz</h1>
-      <div className="d-flex vh-50  justify-content-center">
+      {/* <h1 className="mt-5 text-center fw-bold text-primary">Technical Quiz</h1> */}
+      {/* <div className="d-flex vh-50  justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
             <table className="table table-hover table-bordered table-sm">
@@ -225,12 +226,53 @@ const Details = () => {
             </table>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      {/* responsive table for technical quiz */}
+      <section className="bg-light p-5">
+        <h3 className="pb-2">Technical Quiz</h3>
+        <div className="table-responsive" id="no-more-tables">
+          <table className="table bg-white">
+            <thead className="bg-dark text-white">
+              <tr>
+                <th>Reg no</th>
+                <th>Mobile</th>
+                <th>Branch</th>
+                <th>Year</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {quizs &&
+                quizs.map((quiz) => {
+                  return (
+                    <tr key={quiz._id}>
+                      <td data-title="Reg no">{quiz.regno}</td>
+                      <td data-title="Mobile">{quiz.mobile}</td>
+                      <td data-title="Branch">{quiz.branch}</td>
+                      <td data-title="Year">{quiz.year}</td>
+                      <td data-title="Action">
+                        <AiFillDelete
+                          className="text-secondary"
+                          style={{ cursor: "pointer" }}
+                          onClick={() => deleteQuiz(quiz._id)}
+                        />
+                      </td>
+                      <br />
+                    </tr>
+                  );
+                })}
+                
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       {/* table 2 */}
       {/* Poster Presentation */}
       <h1 className="text-center fw-bold text-danger">Poster Presentation</h1>
-      <div className="mt-2 d-flex vh-50  justify-content-center">
+      <div className="mt-2 col-sm-12 d-flex vh-50  justify-content-center">
         <div className="d-flex w-100 justify-content-center">
           <div className="w-50 bg-white rounded p-3">
             <table className="table">
