@@ -28,3 +28,11 @@
         }
 
       }
+
+/* Hide the "Reg no" and "Year" columns on smaller screens */
+@media (max-width: 768px) {
+  table td[data-title="Reg no"],
+  table td[data-title="Year"] {
+    display: none;
+  }
+}
