@@ -259,7 +259,7 @@ const Details = () => {
                           onClick={() => deleteQuiz(quiz._id)}
                         />
                       </td>
-                      <br />
+                      
                     </tr>
                   );
                 })}
