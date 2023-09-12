@@ -192,123 +192,88 @@ const Details = () => {
       <Toaster position="top-center" reverseOrder={false} />
       {/* toaster */}
 
-      {/* <h1 className="mt-5 text-center fw-bold text-primary">Technical Quiz</h1> */}
-      {/* <div className="d-flex vh-50  justify-content-center">
-        <div className="d-flex w-100 justify-content-center">
-          <div className="w-50 bg-white rounded p-3">
-            <table className="table table-hover table-bordered table-sm">
-              <thead>
-                <tr>
-                  <th>Reg no</th>
-                  <th>mobile</th>
-                  <th>Branch</th>
-                  <th>Year</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {quizs &&
-                  quizs.map((quiz) => {
-                    return (
-                      <tr key={quiz._id}>
-                        <td>{quiz.regno}</td>
-                        <td>{quiz.mobile}</td>
-                        <td>{quiz.branch}</td>
-                        <td>{quiz.year}</td>
-                        <td>
-                          <AiFillDelete
-                            className="text-secondary"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => deleteQuiz(quiz._id)}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+      {/* responsive table for technical quiz */}
+
+      <h1 className="text-center fw-bold text-danger">Technical Quiz</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="d-flex justify-content-center">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Reg no</th>
+                    <th>Mobile</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {quizs &&
+                    quizs.map((quiz) => {
+                      return (
+                        <tr key={quiz._id}>
+                          <td>{quiz.regno}</td>
+                          <td>{quiz.mobile}</td>
+                          <td>{quiz.branch}</td>
+                          <td>{quiz.year}</td>
+                          <td>
+                            <AiFillDelete
+                              className="text-secondary"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => deleteQuiz(quiz._id)}
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div> */}
-
-      {/* responsive table for technical quiz */}
-      <section className="bg-light p-5">
-        <h3 className="pb-2">Technical Quiz</h3>
-        <div className="table-responsive" id="no-more-tables">
-          <table className="table bg-white">
-            <thead className="bg-dark text-white">
-              <tr>
-                <th>Reg no</th>
-                <th>Mobile</th>
-                <th>Branch</th>
-                <th>Year</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {quizs &&
-                quizs.map((quiz) => {
-                  return (
-                    <tr key={quiz._id}>
-                      <td data-title="Reg no">{quiz.regno}</td>
-                      <td data-title="Mobile">{quiz.mobile}</td>
-                      <td data-title="Branch">{quiz.branch}</td>
-                      <td data-title="Year">{quiz.year}</td>
-                      <td data-title="Action">
-                        <AiFillDelete
-                          className="text-secondary"
-                          style={{ cursor: "pointer" }}
-                          onClick={() => deleteQuiz(quiz._id)}
-                        />
-                      </td>
-                      
-                    </tr>
-                  );
-                })}
-                
-            </tbody>
-          </table>
-        </div>
-      </section>
+      </div>
 
       {/* table 2 */}
       {/* Poster Presentation */}
       <h1 className="text-center fw-bold text-danger">Poster Presentation</h1>
-      <div className="mt-2 col-sm-12 d-flex vh-50  justify-content-center">
-        <div className="d-flex w-100 justify-content-center">
-          <div className="w-50 bg-white rounded p-3">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Reg no</th>
-                  <th>Mobile</th>
-                  <th>Branch</th>
-                  <th>Year</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {posters &&
-                  posters.map((poster) => {
-                    return (
-                      <tr key={poster._id}>
-                        <td>{poster.regno}</td>
-                        <td>{poster.mobile}</td>
-                        <td>{poster.branch}</td>
-                        <td>{poster.year}</td>
-                        <td>
-                          <AiFillDelete
-                            className="text-secondary"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => deletePoster(poster._id)}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="d-flex justify-content-center">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Reg no</th>
+                    <th>Mobile</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {posters &&
+                    posters.map((poster) => {
+                      return (
+                        <tr key={poster._id}>
+                          <td>{poster.regno}</td>
+                          <td>{poster.mobile}</td>
+                          <td>{poster.branch}</td>
+                          <td>{poster.year}</td>
+                          <td>
+                            <AiFillDelete
+                              className="text-secondary"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => deletePoster(poster._id)}
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -318,40 +283,42 @@ const Details = () => {
       {/* table-3 */}
       {/* PPT Presentation starts */}
       <h1 className="text-center fw-bolder text-success">PPT Presentation</h1>
-      <div className="mt-2 d-flex vh-50  justify-content-center">
-        <div className="d-flex w-100 justify-content-center">
-          <div className="w-50 bg-white rounded p-3">
-            <table className="table table-hover table-bordered table-sm">
-              <thead>
-                <tr>
-                  <th>Reg no</th>
-                  <th>Mobile</th>
-                  <th>Branch</th>
-                  <th>Year</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ppts &&
-                  ppts.map((ppt) => {
-                    return (
-                      <tr key={ppt._id}>
-                        <td>{ppt.regno}</td>
-                        <td>{ppt.mobile}</td>
-                        <td>{ppt.branch}</td>
-                        <td>{ppt.year}</td>
-                        <td>
-                          <AiFillDelete
-                            className="text-secondary"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => deletePPT(ppt._id)}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="d-flex justify-content-center">
+              <table className="table table-hover table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Reg no</th>
+                    <th>Mobile</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ppts &&
+                    ppts.map((ppt) => {
+                      return (
+                        <tr key={ppt._id}>
+                          <td>{ppt.regno}</td>
+                          <td>{ppt.mobile}</td>
+                          <td>{ppt.branch}</td>
+                          <td>{ppt.year}</td>
+                          <td>
+                            <AiFillDelete
+                              className="text-secondary"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => deletePPT(ppt._id)}
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -360,40 +327,42 @@ const Details = () => {
 
       {/* table-4 */}
       <h1 className="text-center fw-bolder text-warning">Crazy Output</h1>
-      <div className="mt-2 d-flex vh-50 justify-content-center">
-        <div className="d-flex w-100 justify-content-center">
-          <div className="w-50 bg-white rounded p-3">
-            <table className="table table-hover table-bordered table-sm">
-              <thead>
-                <tr>
-                  <th>Reg no</th>
-                  <th>Mobile</th>
-                  <th>Branch</th>
-                  <th>Year</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {crazies &&
-                  crazies.map((crazy) => {
-                    return (
-                      <tr key={crazy._id}>
-                        <td>{crazy.regno}</td>
-                        <td>{crazy.mobile}</td>
-                        <td>{crazy.branch}</td>
-                        <td>{crazy.year}</td>
-                        <td>
-                          <AiFillDelete
-                            className="text-secondary"
-                            style={{ cursor: "pointer" }}
-                            onClick={() => deleteCrazy(crazy._id)}
-                          />
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="d-flex justify-content-center">
+              <table className="table table-hover table-bordered table-responsive">
+                <thead>
+                  <tr>
+                    <th>Reg no</th>
+                    <th>Mobile</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {crazies &&
+                    crazies.map((crazy) => {
+                      return (
+                        <tr key={crazy._id}>
+                          <td>{crazy.regno}</td>
+                          <td>{crazy.mobile}</td>
+                          <td>{crazy.branch}</td>
+                          <td>{crazy.year}</td>
+                          <td>
+                            <AiFillDelete
+                              className="text-secondary"
+                              style={{ cursor: "pointer" }}
+                              onClick={() => deleteCrazy(crazy._id)}
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
