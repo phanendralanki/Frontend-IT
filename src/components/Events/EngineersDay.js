@@ -1,10 +1,13 @@
-import React from 'react'
-
+import React from 'react';
+import { Toaster,toast } from 'react-hot-toast';
 const EngineersDay = () => {
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="event-title">
-        <h1 className="event-title-heading text-center cssFont mt-10 fs-7">Engineer's Day Events</h1>
+        <h1 className="event-title-heading text-center cssFont mt-10 fs-7">
+          Engineer's Day Events
+        </h1>
       </div>
 
       {/*Start - event timelines */}
@@ -55,7 +58,7 @@ const EngineersDay = () => {
       {/* Start - event cards*/}
 
       <div className="event-registration-title">
-        <h1 className='text-center'>Event's Registrations</h1>
+        <h1 className="text-center">Event's Registrations</h1>
       </div>
 
       {/* Technical Quiz card */}
@@ -96,9 +99,14 @@ const EngineersDay = () => {
                 </p>
               </div>
             </div>
-            <a href="/technicalQuizRegistration">
-              <button className="action">Register now</button>
-            </a>
+            
+              <button
+                className="action"
+                onClick={()=>{toast.error('Registration Closed')}}
+              >
+                Register now
+              </button>
+            
           </div>
         </div>
 
@@ -227,8 +235,8 @@ const EngineersDay = () => {
                 </p> */}
 
                 <p className="info description">
-                  Pre-prepared program in python is to be written and executed to
-                  show the output. The output can be any pattern.{" "}
+                  Pre-prepared program in python is to be written and executed
+                  to show the output. The output can be any pattern.{" "}
                   <span style={{ color: "red" }}>
                     Ex:Any picture or scenario.
                   </span>
