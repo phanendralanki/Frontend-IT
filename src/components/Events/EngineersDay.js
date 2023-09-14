@@ -99,14 +99,15 @@ const EngineersDay = () => {
                 </p>
               </div>
             </div>
-            
-              <button
-                className="action"
-                onClick={()=>{toast.error('Registration Closed')}}
-              >
-                Register now
-              </button>
-            
+
+            <button
+              className="action"
+              onClick={() => {
+                toast.error("Registrations Closed");
+              }}
+            >
+              Register now
+            </button>
           </div>
         </div>
 
@@ -152,9 +153,16 @@ const EngineersDay = () => {
                 </p>
               </div>
             </div>
-            <a href="/posterPresentationRegistration">
-              <button className="action">Register now</button>
-            </a>
+            {/* <a href="/posterPresentationRegistration"> */}
+              <button
+                className="action"
+                onClick={() => {
+                  toast.error("Registrations Closed");
+                }}
+              >
+                Register now
+              </button>
+            {/* </a> */}
           </div>
         </div>
 
@@ -197,9 +205,16 @@ const EngineersDay = () => {
                 </p>
               </div>
             </div>
-            <a href="/pptRegistration">
-              <button className="action">Register now</button>
-            </a>
+            {/* <a href="/pptRegistration"> */}
+              <button
+                className="action"
+                onClick={() => {
+                  toast.error("Registrations Closed");
+                }}
+              >
+                Register now
+              </button>
+            {/* </a> */}
           </div>
         </div>
 
@@ -246,9 +261,16 @@ const EngineersDay = () => {
                 </p>
               </div>
             </div>
-            <a href="/crazyoutputregistration">
-              <button className="action">Register now</button>
-            </a>
+            {/* <a href="/crazyoutputregistration"> */}
+              <button
+                className="action"
+                onClick={() => {
+                  toast.error("Registrations Closed");
+                }}
+              >
+                Register now
+              </button>
+            {/* </a> */}
           </div>
         </div>
       </div>
