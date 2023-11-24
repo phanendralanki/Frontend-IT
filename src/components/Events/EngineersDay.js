@@ -6,7 +6,7 @@ const EngineersDay = () => {
       <Toaster position="top-center" reverseOrder={false} />
       <div className="event-title">
         <h1 className="event-title-heading text-center cssFont mt-10 fs-7">
-          Engineer's Day Events TimeLine
+          Engineer's Day Events
         </h1>
       </div>
 
