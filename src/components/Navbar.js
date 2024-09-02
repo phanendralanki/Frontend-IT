@@ -3,10 +3,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 import { Link } from "react-router-dom";
-import { useState } from "react"; // Import useState
+import { useState } from "react"; 
 
 function BasicExample() {
-  // Create a state variable to manage the Navbar collapse state
+  //  state variable to manage the Navbar collapse state
   const [expanded, setExpanded] = useState(false);
 
   // Function to handle Nav item selection and close the Navbar on mobile

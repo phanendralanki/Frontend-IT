@@ -11,8 +11,8 @@ import Contactus from "./components/Contactus";
 import EngineersDay from "./components/Events/EngineersDay";
 
 // Engineer's Day Events Registration Pages
-// import CrazyOutput from "./components/Events/EngineersRegistration/CrazyOutput";
-// import TechnicalQuiz from "./components/Events/EngineersRegistration/TechnicalQuiz";
+import CrazyOutput from "./components/Events/EngineersRegistration/CrazyOutput";
+import TechnicalQuiz from "./components/Events/EngineersRegistration/TechnicalQuiz";
 // import PPTRegistration from "./components/Events/EngineersRegistration/PPTRegistration";
 // import PosterPresentation from "./components/Events/EngineersRegistration/PosterPresentation";
 
@@ -31,12 +31,12 @@ function App() {
             {/* <Route path='*' element={</>}/> */}
 
             {/* Engineer's day events registration routes */}
-            {/* 
+            
             <Route path="/crazyoutputregistration" element={<CrazyOutput />} />
             <Route
               path="/technicalQuizRegistration"
               element={<TechnicalQuiz />}
-            /> */}
+            />
 
             {/* <Route path="/pptRegistration" element={<PPTRegistration />} /> */}
 

@@ -42,7 +42,7 @@ const CrazyOutput = () => {
 
     
     // console.log(regno+" "+year+" "+branch);
-    //to store the data in a variable
+   
     const crazy = {
       regno:regno,
       mobile:mobile,
@@ -50,7 +50,7 @@ const CrazyOutput = () => {
       branch:branch,
     };
 
-    //below code is to send the data to the backend server
+   
     const response = await fetch(
       "https://itcsbs-b10k.onrender.com/post-crazy",
       // "http://localhost:5000/post-crazy",

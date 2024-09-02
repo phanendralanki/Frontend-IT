@@ -37,22 +37,7 @@ const Details = () => {
       }
   }
 
-  // const updateQuiz = async(id) => {
-  //  const response = await fetch(`http://localhost:5000/update-quiz/${id}`,{
-  //   method:"PUT",
-  //   headers:{
-  //     "Content-type":"application/json"
-  //   },
-  //   body: JSON.stringify({regno,branch,year}),
-  //  });
-  //  if(response.status === 200){
-  //   toast.success("updated Successfully");
-  //   navigate("/details");
-    
-  //  }else{
-  //   toast.error("something went wrong");
-  //  }
-  // }
+ 
 
   /*
   ===========================

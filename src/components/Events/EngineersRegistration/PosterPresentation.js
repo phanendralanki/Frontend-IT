@@ -48,7 +48,6 @@ const PosterPresentation = () => {
       branch:branch,
     };
 
-    // below code is to send the data to the backend server
     const response = await fetch(
       "https://itcsbs-b10k.onrender.com/post-poster",
       // "http://localhost:5000/post-poster",
